@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import ProjectVisual from './ProjectVisual';
+import Reveal from './Reveal';
+export default function ProjectCard({project,index}:{project:any;index:number}){return <Reveal delay={index*.08}><Link href={`/projects/${project.slug}`} className={`project ${project.featured?'featured':''}`}><ProjectVisual type={project.visual}/><div className="project-copy"><div><div className="project-num">{project.n} / {project.type}</div><h3>{project.title}</h3><p>{project.desc}</p></div><div className="tags">{project.tags.map((t:string)=><span className="tag" key={t}>{t}</span>)}</div></div></Link></Reveal>}
