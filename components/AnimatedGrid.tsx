@@ -1,0 +1,3 @@
+'use client';
+import {motion} from 'framer-motion';
+export default function AnimatedGrid(){return <div className="hero-orbit" aria-hidden><motion.div className="orbit orbit-a" animate={{rotate:360}} transition={{duration:32,repeat:Infinity,ease:'linear'}}/><motion.div className="orbit orbit-b" animate={{rotate:-360}} transition={{duration:24,repeat:Infinity,ease:'linear'}}/><div className="orbit-core">AT<span>.</span></div></div>}
