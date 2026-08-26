@@ -29,6 +29,15 @@ const projects = [
     result: 'Real vaqtli aniqlash va tezkor xabarnoma bilan incident response jarayonini tezlashtiradi.',
     visual: 'ids',
   },
+  {
+    slug: 'mathlearn',
+    n: '04', status: 'EDTECH / FULL-STACK', title: 'Mathlearn MathematicsWeb', type: 'Interactive Mathematics Learning Platform',
+    desc: 'Mashqlar, progress tracking va aniq tushuntirishlar atrofida qurilgan interaktiv matematika o\u2018rganish platformasi.',
+    flow: ['Mavzu', 'Interaktiv dars', 'Mashq', 'Tekshiruv', 'Progress tracking'],
+    stack: ['Next.js', 'TypeScript', 'Education', 'Interactive UI'],
+    result: 'Natija: o\u2018quvchilar tushunchalarni amaliyot orqali mustahkamlaydi, progress real vaqtda kuzatiladi.',
+    visual: 'math',
+  },
 ];
 
 const labSteps = ['RECON', 'ENUMERATION', 'INITIAL ACCESS', 'EXPLOITATION', 'PRIVILEGE ESCALATION', 'POST-EXPLOITATION', 'REPORTING'];
@@ -122,7 +131,7 @@ export default function Home() {
       <section id="projects" className="section container">
         <div className="section-kicker">03 \u2014 TANLANGAN LOYIHALAR <span /></div>
         <h2 className="section-title">Xavfsizlikni real mahsulotga aylantirgan ishlar.</h2>
-        <div className="section-sub">01 \u2014 03 / CASE STUDIES</div>
+        <div className="section-sub">01 \u2014 04 / CASE STUDIES</div>
         <div className="projects-grid">
           {projects.map((project) => (
             <Link className="project-card" href={`/projects/${project.slug}`} key={project.title}>

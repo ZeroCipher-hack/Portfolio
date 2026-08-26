@@ -22,6 +22,13 @@ const data: Record<string, { title: string; type: string; desc: string; flow: st
     stack: ['Python', 'Scapy', 'Telegram API', 'Web Dashboard', 'PDF Reporting'],
     result: 'Real vaqtli aniqlash va tezkor xabarnoma bilan incident response jarayonini tezlashtiradi.',
   },
+  mathlearn: {
+    n: '04', title: 'Mathlearn MathematicsWeb', type: 'Interactive Mathematics Learning Platform',
+    desc: 'Mashqlar, progress tracking va aniq tushuntirishlar atrofida qurilgan interaktiv matematika o\u2018rganish platformasi.',
+    flow: ['Mavzu', 'Interaktiv dars', 'Mashq', 'Tekshiruv', 'Progress tracking'],
+    stack: ['Next.js', 'TypeScript', 'Education', 'Interactive UI'],
+    result: 'Natija: o\u2018quvchilar tushunchalarni amaliyot orqali mustahkamlaydi, progress real vaqtda kuzatiladi.',
+  },
 };
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

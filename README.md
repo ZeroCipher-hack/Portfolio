@@ -14,6 +14,7 @@ Personal portfolio for cybersecurity, full-stack engineering and AI security wor
 
 - HR System — AI-powered HR automation
 - SentinelX — cybersecurity / SIEM
+- Mini IDS/SIEM — real-time network intrusion detection
 - Mathlearn MathematicsWeb — interactive mathematics learning
 
 ## Run locally
