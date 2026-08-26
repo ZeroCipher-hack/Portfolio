@@ -1,19 +1,62 @@
 import Link from 'next/link';
 
-const data: Record<string,{title:string;eyebrow:string;desc:string;stack:string[];focus:string[]}> = {
-  'hr-system': {title:'HR System',eyebrow:'AI-POWERED HR AUTOMATION',desc:'A full-stack HR platform designed to automate recruitment workflows and make internal HR operations faster and more structured.',stack:['Django','React','AI','PostgreSQL','REST API'],focus:['Recruitment workflow','AI-assisted automation','Role-based operations']},
-  sentinelx: {title:'SentinelX',eyebrow:'CYBERSECURITY / SIEM',desc:'A security monitoring platform concept focused on event visibility, threat detection and incident-oriented dashboards.',stack:['Python','Security','SIEM','Linux','Dashboard'],focus:['Threat visibility','Security event analysis','Incident triage']},
-  mathlearn: {title:'Mathlearn MathematicsWeb',eyebrow:'EDTECH / FULL-STACK',desc:'An interactive mathematics learning platform built around clear explanations, practice and an engaging web experience.',stack:['TypeScript','Web','Education','Interactive UI'],focus:['Interactive lessons','Practice flow','Progress-oriented UX']}
+const data: Record<string, { title: string; type: string; desc: string; flow: string[]; stack: string[]; result: string; n: string }> = {
+  'hr-system': {
+    n: '01', title: 'HR System', type: 'AI-Powered HR Automation Platform',
+    desc: 'CV qabul qilishdan intervyugacha bo\u2018lgan jarayonni Telegram bot, AI skrining va avtomatik yo\u2018naltirish bilan tezlashtiruvchi tizim.',
+    flow: ['CV', 'Telegram Bot', 'AI Screening', 'HR', 'Interview', 'Hiring'],
+    stack: ['Python', 'Django', 'PostgreSQL', 'Next.js', 'Tailwind CSS'],
+    result: 'Natija: dastlabki filtrlash tezlashdi, HR jamoasi faqat eng mos nomzodlar bilan ishlaydi.',
+  },
+  sentinelx: {
+    n: '02', title: 'SentinelX', type: 'AI-Powered Security Monitoring Platform',
+    desc: 'Log fayllarni yig\u2018ib, AI yordamida tahlil qiluvchi, tahdidlarni aniqlab alert yuboradigan hamda honeypot orqali hujumchi xatti-harakatini o\u2018rganadigan monitoring tizimi.',
+    flow: ['Logs', 'AI Analysis', 'Threat Detection', 'Alert', 'Simulation', 'Honeypot'],
+    stack: ['Python', 'Django', 'PostgreSQL', 'AI Analysis', 'Honeypot'],
+    result: 'Men nafaqat zaifliklarni topaman, balki ularni avtomatik aniqlaydigan tizimlar ham quraman.',
+  },
+  'mini-ids-siem': {
+    n: '03', title: 'Mini IDS/SIEM', type: 'Real-Time Network Intrusion Detection',
+    desc: 'Port scan, SSH brute-force va ARP spoofing hujumlarini aniqlaydigan, Telegram alert, web dashboard va PDF hisobotga ega tarmoq monitoring tizimi.',
+    flow: ['Network traffic', 'Detection', 'Telegram Alert', 'Dashboard', 'PDF Report'],
+    stack: ['Python', 'Scapy', 'Telegram API', 'Web Dashboard', 'PDF Reporting'],
+    result: 'Real vaqtli aniqlash va tezkor xabarnoma bilan incident response jarayonini tezlashtiradi.',
+  },
 };
 
-function Preview({slug}:{slug:string}){
-  if(slug==='sentinelx') return <div className="preview"><div className="preview-top"><b>SENTINELX</b><span className="green">● SECURITY MONITOR</span></div><div className="metric-grid"><div><small>THREAT FEED</small><strong>ACTIVE</strong></div><div><small>ALERTS</small><strong>TRACKED</strong></div><div><small>EVENTS</small><strong>ANALYZED</strong></div></div><div className="threat-list"><span>CRITICAL&nbsp;&nbsp; SSH BRUTE FORCE</span><span>HIGH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PORT SCAN</span><span>MEDIUM&nbsp;&nbsp;&nbsp; SUSPICIOUS LOGIN</span></div></div>;
-  if(slug==='mathlearn') return <div className="preview math-preview"><div className="preview-top"><b>MATHLEARN</b><span>INTERACTIVE LESSON</span></div><div className="equation">2x + 6 = 18</div><div className="answer-row"><span>x = ?</span><b>6</b><span className="green">✓ SOLVED</span></div><div className="progress"><i/></div></div>;
-  return <div className="preview"><div className="preview-top"><b>HR SYSTEM</b><span>AI RECRUITMENT</span></div><div className="metric-grid"><div><small>RECRUITMENT</small><strong>WORKFLOW</strong></div><div><small>AI</small><strong>ASSISTED</strong></div><div><small>OPERATIONS</small><strong>MANAGED</strong></div></div><div className="bars"><i/><i/><i/><i/><i/><i/><i/><i/></div></div>;
-}
-
-export default async function ProjectPage({params}:{params:Promise<{slug:string}>}) {
-  const {slug}=await params; const p=data[slug];
-  if(!p) return <main className="container section"><h1>Project not found.</h1><Link className="btn" href="/">← Back</Link></main>;
-  return <main><header className="container nav"><Link className="logo" href="/">AT<span className="green">.</span></Link><Link className="mono" href="/">← BACK</Link></header><section className="project-hero"><div className="container"><div className="eyebrow">{p.eyebrow}</div><h1>{p.title}</h1><p className="lead">{p.desc}</p><div className="tags">{p.stack.map(x=><span className="tag" key={x}>{x}</span>)}</div><Preview slug={slug}/></div></section><section className="section"><div className="container case-grid"><div><div className="eyebrow">01 / FOCUS</div><h2>WHAT IT<br/>SOLVES.</h2></div><div><p className="case-copy">This case study is deliberately built around the real product scope. Final screenshots, implementation details and verified results will be added from the project itself instead of inventing numbers or claims.</p><div className="metric-grid case-metrics">{p.focus.map((x,i)=><div key={x}><small>0{i+1}</small><strong>{x}</strong></div>)}</div></div></div></section><section className="section"><div className="container"><div className="terminal"><div className="terminal-bar"><i className="dot"/><i className="dot"/><i className="dot"/><span>~/case-study</span></div><pre><span className="green">$ project.status</span>{'\n\nBUILDING → TESTING → HARDENING\n\nARCHITECTURE   modular\nSECURITY       first-class\nUX             responsive\nDELIVERY       production-ready'}</pre></div></div></section></main>;
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const p = data[slug];
+  if (!p) {
+    return (
+      <main className="container section">
+        <h1>Loyiha topilmadi.</h1>
+        <Link className="text-link" href="/">\u2190 Bosh sahifaga</Link>
+      </main>
+    );
+  }
+  return (
+    <main>
+      <nav className="site-nav container">
+        <Link className="brand" href="/">AT//SEC</Link>
+        <Link className="text-link" href="/">\u2190 ORQAGA</Link>
+      </nav>
+      <section className="section container">
+        <div className="section-kicker">{p.n} / CASE STUDY <span /></div>
+        <h1 className="section-title">{p.title}</h1>
+        <p className="project-type">{p.type}</p>
+        <p className="hero-lead" style={{ marginTop: 24, maxWidth: 640 }}>{p.desc}</p>
+        <div className="arch-flow" style={{ marginTop: 40, maxWidth: 700 }}>
+          <span className="arch-label">ARCHITECTURE FLOW</span>
+          <div className="arch-steps">
+            {p.flow.map((step, i) => (
+              <span key={step} className="arch-step">{step}{i < p.flow.length - 1 && <b>\u2192</b>}</span>
+            ))}
+          </div>
+        </div>
+        <div className="tags" style={{ marginTop: 28 }}>{p.stack.map(x => <span key={x}>{x}</span>)}</div>
+        <p className="project-result" style={{ marginTop: 32, maxWidth: 640 }}>{p.result}</p>
+      </section>
+    </main>
+  );
 }
