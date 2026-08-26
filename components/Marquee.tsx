@@ -1,0 +1,1 @@
+export default function Marquee(){return <div className="marquee"><div>WEB SECURITY · PENETRATION TESTING · AI SECURITY · FULL-STACK · WEB SECURITY · PENETRATION TESTING · AI SECURITY · FULL-STACK · </div></div>}
