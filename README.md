@@ -2,15 +2,14 @@
 
 > Cybersecurity & Backend Engineer focused on security engineering, backend systems, and practical automation.
 
-🌐 **Live portfolio:** [akramovtolqin.com](https://akramovtolqin.com)  
 💼 **LinkedIn:** [Akramov Tolqin](https://www.linkedin.com/in/to-lqin-akramov-380524275/)  
 🐙 **GitHub:** [ZeroCipher-hack](https://github.com/ZeroCipher-hack)
 
 ## About
 
-This portfolio showcases selected work across cybersecurity, backend engineering, full-stack development, and security-focused automation.
+This repository contains my personal portfolio website and selected work across cybersecurity, backend engineering, full-stack development, and security-focused automation.
 
-My strongest focus areas are:
+### Focus areas
 
 - Cybersecurity & penetration testing
 - Network security and intrusion detection
@@ -27,10 +26,10 @@ Async SIEM backend for network telemetry ingestion, event normalization, correla
 **Stack:** Python · FastAPI · Scapy · Redis Streams · PostgreSQL · SQLAlchemy · Docker
 
 ### 🔐 Mini IDS/SIEM
-Security monitoring project focused on real-time network intrusion detection and event analysis.
+Security monitoring project focused on real-time network intrusion detection, alerting, dashboarding, and reporting.
 
 ### 👨‍💼 HR System
-Web-based HR automation platform for managing vacancies, candidates, applications, interviews, and recruitment workflows.
+Web-based HR automation platform for vacancies, candidates, applications, interviews, and recruitment workflows.
 
 ### 📚 Mathlearn
 Interactive mathematics learning project demonstrating frontend application development and educational tooling.
@@ -45,13 +44,7 @@ Interactive mathematics learning project demonstrating frontend application deve
 
 ## Development Philosophy
 
-I prefer building systems that are:
-
-- Testable
-- Observable
-- Secure by design
-- Documented
-- Easy to deploy and maintain
+I build systems that are testable, observable, secure-minded, documented, and practical to deploy and maintain.
 
 ## Run Locally
 
@@ -61,7 +54,3 @@ npm run dev
 ```
 
 Then open `http://localhost:3000`.
-
-## Contact
-
-For professional opportunities, collaboration, or security engineering work, connect through LinkedIn or the contact information provided on the portfolio website.
